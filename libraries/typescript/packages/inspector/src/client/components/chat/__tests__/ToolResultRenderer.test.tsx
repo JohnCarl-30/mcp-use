@@ -82,6 +82,7 @@ describe("ToolResultRenderer view resource loading", () => {
     });
 
     expect(readResource).toHaveBeenCalledWith("ui://weather/forecast.html");
+    expect(readResource).not.toHaveBeenCalledWith("ui://wrong/legacy.html");
     expect(container.querySelector("iframe")?.src).toBe(
       "https://sandbox.example/inspector/sandbox"
     );
